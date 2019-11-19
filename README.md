@@ -1,3 +1,3 @@
 # WriteGrand
 
-### The Open Source Publishing Platform For Reading and Writing Enthusiasts
+#### The Open Source Publishing Platform For Reading and Writing Enthusiasts

@@ -14,11 +14,8 @@ margin: 20px 0px;
 `
 
 const AppWrapper = styled.div`
-/**
+font-family: 'Source Sans Pro',sans-serif;
 
-Nothing Yet 
-
-*/
 `
 
 const Index = () => {

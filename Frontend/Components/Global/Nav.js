@@ -6,26 +6,10 @@ import {useStoreState,useStoreActions} from 'easy-peasy';
 
 const Logo = styled.img`
 width: 150px;
-height: 31px;
 max-width: 100%;
 margin-top: 15px;
-margin-left: 10px;
 border-right: 1px solid #E0E0E0;
-padding: 0px 10px;
-
-@media ${Devices.smallMobile}
-{
-    width: 118px;
-    height: 25px;
-}
-
-
-@media ${Devices.Mobile}
-{
-    width: 160px;
-    height: 33px;
-    margin-top: 8px;
-}
+padding: 5px 10px;
 `
 const Navigation = styled.ul`
 display: flex;
@@ -36,9 +20,46 @@ max-width: 1366px;
 margin: 0px auto;
 `
 
+const MiddleSection = styled.div`
+margin-left: auto;
+display: flex;
+justify-content: center;
+align-items:center;
+
+@media ${Devices.Mobile}
+{
+    display: none;
+}
+`
+
+const LastSection  = styled.div`
+margin-left: auto;
+display: flex;
+justify-content: center;
+align-items:center;
+`
 const Navitem = styled.li`
+display: flex;
+margin: 0px 5px;
+margin-top: 15px;
+font-size: 16px;
+color: #999999;
 
+box-icon 
+{
+    fill: #546E7A;
+    width: 24px;
+    margin:0px 7px;
+    margin-top: 1px;
+}
+`
 
+const Button = styled.button`
+padding: 10px 15px;
+color: #263238;
+font-weight: 600;
+border-radius: 3px;
+font-size: 14px;
 `
 
 
@@ -57,7 +78,7 @@ const Nav = () => {
     return (
         <nav>
             <Navigation>
-                <Logo src="/static/Assets/logo.png" />
+                <Logo src="/static/Assets/logo.svg" />
                 {
                     /**
                      * 
@@ -67,6 +88,32 @@ const Nav = () => {
                      */
                 }
                 
+                <MiddleSection>
+                <Navitem>
+                <box-icon name='search-alt'></box-icon>
+                </Navitem>
+                <Navitem>
+                <box-icon  name='bookmark'></box-icon>
+                </Navitem>
+                <Navitem>
+                <box-icon name='message-square' ></box-icon>
+                </Navitem>
+                <Navitem>
+                <box-icon name='bell'  ></box-icon>
+                </Navitem>
+                </MiddleSection>
+
+                <LastSection>
+                    <Navitem>
+                        <Button> Sign in</Button>
+                    </Navitem>
+
+                    <Navitem>
+                        <Button style={{color: '#263238',backgroundColor: '#00E676'}}>
+                        Sign up
+                        </Button>
+                    </Navitem>
+                </LastSection>
 
                 {
                     /**

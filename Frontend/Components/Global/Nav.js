@@ -37,6 +37,20 @@ margin-left: auto;
 display: flex;
 justify-content: center;
 align-items:center;
+.drawer 
+{
+    display: none;
+    @media ${Devices.Mobile}
+    {
+        display: flex;
+        margin-top: 16px;
+    }
+
+    box-icon 
+    {
+        width: 24px;
+    }
+}
 `
 const Navitem = styled.li`
 display: flex;
@@ -89,6 +103,7 @@ const Nav = () => {
                 }
                 
                 <MiddleSection>
+ 
                 <Navitem>
                 <box-icon name='search-alt'></box-icon>
                 </Navitem>
@@ -104,10 +119,12 @@ const Nav = () => {
                 </MiddleSection>
 
                 <LastSection>
+                <Navitem className="drawer">
+                    <box-icon name='menu' ></box-icon>
+                    </Navitem>
                     <Navitem>
                         <Button> Sign in</Button>
                     </Navitem>
-
                     <Navitem>
                         <Button style={{color: '#263238',backgroundColor: '#00E676'}}>
                         Sign up

@@ -73,7 +73,8 @@ padding: 10px 15px;
 color: #263238;
 font-weight: 600;
 border-radius: 3px;
-font-size: 14px;
+font-size: 15px;
+font-family: 'Raleway',sans-serif;
 `
 
 

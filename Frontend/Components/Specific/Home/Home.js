@@ -11,6 +11,110 @@ max-width: 1366px;
 margin: 10px auto;
 border: 1px solid #e0e0e0;
 padding: 5px 0px;
+
+@font-face {
+font-family: 'AvenirNext';
+font-style: normal;
+font-weight: 400;
+src: local('AvenirNextCyr-Regular'), url('/Assets/Fonts/Avenir-Next/AvenirNextCyr-Regular.woff') format('woff');
+}
+
+@font-face {
+font-family: 'AvenirNext';
+font-style: normal;
+font-weight: 100;
+src: local('AvenirNextCyr-Thin'), url('/Assets/Fonts/Avenir-Next/AvenirNextCyr-Thin.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'AvenirNext';
+font-style: normal;
+font-weight: 200;
+src: local('AvenirNextCyr-Light'), url('/Assets/Fonts/Avenir-Next/AvenirNextCyr-Light.woff') format('woff');
+}
+
+
+
+@font-face {
+font-family: 'AvenirNext';
+font-style: normal;
+font-weight: 500;
+src: local('AvenirNextCyr-Medium'), url('/Assets/Fonts/Avenir-Next/AvenirNextCyr-Medium.woff') format('woff');
+}
+
+@font-face {
+font-family: 'AvenirNext';
+font-style: normal;
+font-weight: 600;
+src: local('AvenirNextCyr-Demi'), url('/Assets/Fonts/Avenir-Next/AvenirNextCyr-Demi.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'AvenirNext';
+font-style: normal;
+font-weight: 700;
+src: local('AvenirNextCyr-Bold'), url('/Assets/Fonts/Avenir-Next/AvenirNextCyr-Bold.woff') format('woff');
+}
+
+
+
+@font-face {
+font-family: 'AvenirNext';
+font-style: normal;
+font-weight: 900;
+src: local('AvenirNextCyr-Heavy'), url('/Assets/Fonts/Avenir-Next/AvenirNextCyr-Heavy.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'TT Norms Pro';
+    src: url('/Assets/Fonts/TT-Norms-Pro/TTNormsPro-Regular.woff2') format('woff2'),
+        url('/Assets/Fonts/TT-Norms-Pro/TTNormsPro-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Norms Pro';
+    src: url('/Assets/Fonts/TT-Norms-Pro/TTNormsPro-Medium.woff2') format('woff2'),
+        url('/Assets/Fonts/TT-Norms-Pro/TTNormsPro-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Norms Pro';
+    src: url('/Assets/Fonts/TT-Norms-Pro/TTNormsPro-Bold.woff2') format('woff2'),
+        url('/Assets/Fonts/TT-Norms-Pro/TTNormsPro-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Norms Pro';
+    src: url('/Assets/Fonts/TT-Norms-Pro/TTNormsPro-Light.woff2') format('woff2'),
+        url('/Assets/Fonts/TT-Norms-Pro/TTNormsPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Norms Pro';
+    src: url('/Assets/Fonts/TT-Norms-Pro/TTNormsPro-Thin.woff2') format('woff2'),
+        url('/Assets/Fonts/TT-Norms-Pro/TTNormsPro-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Norms Pro';
+    src: url('/Assets/Fonts/TT-Norms-Pro/TTNormsPro-Black.woff2') format('woff2'),
+        url('/Assets/Fonts/TT-Norms-Pro/TTNormsPro-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
 `
 
 
@@ -42,6 +146,8 @@ function useWindowSize() {
   return windowSize;
 }
 
+
+
 const Home = () => {
 
     {
@@ -49,14 +155,18 @@ const Home = () => {
          * SIDEBAR HANDLE CLOSE ON CLICKING BODY
          */
     }
-
     var size = useWindowSize();
+    var setSize = useStoreActions(actions => actions.setWindowSize);
+    setSize(size.width);
     var setSidebar = useStoreActions(actions => actions.base.setSidebar);
     var sidebar = useStoreState(state => state.base.sidebar);
     
     return (
         <Container onClick={() => setSidebar(false)}>
-        
+         {/**
+         
+         
+          */}
         </Container>
 
     )

@@ -28,7 +28,13 @@ align-items:center;
 
 @media ${Devices.Mobile}
 {
-    display: none;
+    visibility: hidden;
+    position: absolute;
+    flex-flow: column;
+    background: white;
+    width: 100%;
+    justify-content: left;
+    align-items: flex-start;
 }
 `
 
@@ -43,7 +49,7 @@ align-items:center;
     @media ${Devices.Mobile}
     {
         display: flex;
-        margin-top: 16px;
+        margin-top: 14px;
     }
 
     box-icon 
@@ -62,9 +68,9 @@ color: #999999;
 box-icon 
 {
     fill: #546E7A;
-    width: 24px;
+    width: 22px;
     margin:0px 7px;
-    margin-top: 1px;
+    margin-top: 5px;
 }
 `
 
@@ -74,7 +80,7 @@ color: #263238;
 font-weight: 600;
 border-radius: 3px;
 font-size: 15px;
-font-family: 'Raleway',sans-serif;
+font-family: 'AvenirNext',sans-serif;
 `
 
 
@@ -90,6 +96,7 @@ font-family: 'Raleway',sans-serif;
 const Nav = () => {
     var drawer = useStoreState(state => state.base.sidebar);
     var setDrawer = useStoreActions(actions => actions.base.setSidebar);
+    var windowSize = useStoreState(state => state.windowSize);
     return (
         <nav>
             <Navigation>
@@ -103,7 +110,7 @@ const Nav = () => {
                      */
                 }
                 
-                <MiddleSection>
+                <MiddleSection style={{visibility: windowSize < 768 ? (drawer ? 'visible' : 'hidden') : null}}>
  
                 <Navitem>
                 <box-icon name='search-alt'></box-icon>
@@ -120,11 +127,11 @@ const Nav = () => {
                 </MiddleSection>
 
                 <LastSection>
-                <Navitem className="drawer">
+                <Navitem className="drawer" onClick={() => setDrawer(true)}>
                     <box-icon name='menu' ></box-icon>
                     </Navitem>
                     <Navitem>
-                        <Button> Sign in</Button>
+                        <Button style={{marginTop: '2px'}}> Sign in</Button>
                     </Navitem>
                     <Navitem>
                         <Button style={{color: '#263238',backgroundColor: '#00E676'}}>

@@ -100,7 +100,7 @@ const Nav = () => {
     return (
         <nav>
             <Navigation>
-                <Logo src="/static/Assets/logo.svg" />
+                <Logo src="/Assets/Images/Logo.svg" />
                 {
                     /**
                      * 

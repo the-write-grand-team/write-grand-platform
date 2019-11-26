@@ -5,11 +5,10 @@ import {useState} from 'react';
 import {useStoreState,useStoreActions} from 'easy-peasy';
 
 const Logo = styled.img`
-width: 150px;
+width: 169px;
 max-width: 100%;
 margin-top: 15px;
-border-right: 1px solid #E0E0E0;
-padding: 5px 10px;
+padding: 0px 10px;
 `
 const Navigation = styled.ul`
 display: flex;
@@ -18,6 +17,7 @@ overflow: hidden;
 background: white;
 max-width: 1366px;
 margin: 0px auto;
+padding: 0;
 `
 
 const MiddleSection = styled.div`
@@ -63,11 +63,11 @@ display: flex;
 margin: 0px 5px;
 margin-top: 15px;
 font-size: 16px;
-color: #999999;
+color: #263238;
 
 box-icon 
 {
-    fill: #546E7A;
+    fill: #3c3c3c;
     width: 22px;
     margin:0px 7px;
     margin-top: 5px;
@@ -76,11 +76,18 @@ box-icon
 
 const Button = styled.button`
 padding: 10px 15px;
-color: #263238;
+color: #3c3c3c;
 font-weight: 600;
 border-radius: 3px;
 font-size: 15px;
 font-family: 'AvenirNext',sans-serif;
+border: none;
+background: none;
+
+@media ${Devices.Mobile}
+{
+    font-size: 14px;
+}
 `
 
 
@@ -134,7 +141,7 @@ const Nav = () => {
                         <Button style={{marginTop: '2px'}}> Sign in</Button>
                     </Navitem>
                     <Navitem>
-                        <Button style={{color: '#263238',backgroundColor: '#00E676'}}>
+                        <Button style={{color: '#3c3c3c',backgroundColor: '#20FBA2'}}>
                         Sign up
                         </Button>
                     </Navitem>

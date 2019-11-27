@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Devices } from '../../Global/responsive';
 import { useState,useEffect } from 'react';
 import { useStoreState, useStoreActions } from 'easy-peasy';
+import TopGrid from './ArticleCards/TopGrid';
 
 
 const Container = styled.div`
@@ -117,95 +118,7 @@ src: local('AvenirNextCyr-Heavy'), url('/Assets/Fonts/Avenir-Next/AvenirNextCyr-
 
 `
 
-const TopGrid = styled.div`
-display:flex;
-font-family: 'AvenirNext',sans-serif;
-max-width: 1100px;
-width: 100%;
-margin: auto;
-padding: 30px;
 
-@media ${Devices.Mobile}
-{
-    flex-flow: column-reverse;
-    padding: 10px;
-}
-.cover 
-{
-    background-size: cover;
-    background-position: 95% 75%;
-    background-image: url('https://image.freepik.com/free-vector/memphis-background-of-abstract-shapes_23-2147639629.jpg');
-    width: 400px;
-    height: 400px;
-    margin-left: auto;
-    border-radius: 10px;
-
-    @media ${Devices.Mobile}
-    {
-    width: 390px;
-    height: 390px;
-    margin-left: 0;
-    }
-}
-
-.details 
-{
-    display: flex;
-    flex-flow: column;
-    width: 50%;
-    padding: 50px 10px;
-
-    @media ${Devices.Mobile}
-        {
-        width: 100%;
-        padding: 20px 10px;
-        }
-
-    .title 
-    {
-        font-weight: 700;
-        font-size: 35px;
-        color: #3c3c3c;
-        text-transform: capitalize;
-        width: 85%;
-        @media ${Devices.Mobile}
-        {
-        width: 90%;
-        }
-    }
-
-    .category
-    {
-        color: #4FC3F7;
-        font-weight: 700;
-        margin: 20px 0px;
-        text-transform: uppercase;
-        font-size: 14px;
-    }
-
-.excerpt
-{
-    width: 90%;
-    color: #999999;
-    font-weight: 600;
-    font-size: 15px;
-    text-transform: capitalize;
-}
-
-.meta 
-{
-    display: flex;
-    margin: 20px 0px;
-    .author 
-    {
-        color: #999999;
-        font-weight: 700;
-        font-size: 14px;
-        text-transform: capitalize;
-    }
-}
-}
-`
 
 
 function useWindowSize() {
@@ -255,28 +168,8 @@ const Home = () => {
         <Container onClick={() => setSidebar(false)}>
          {
             
-            <TopGrid>
-            <div className="details">
+            <TopGrid />
 
-                <div className="title">
-                7 Psychological Superpowers Few People Have (That You Can Use to Set Yourself Apart)
-                </div>
-                <div className="category">
-                    React
-                </div>
-                <div className="excerpt">
-                    This is a general excerpt that i think needs your attention so just be careful about this
-                </div>
-                <div className="meta">
-                    <div className="author">Afzaal Afridi</div>
-                </div>
-            </div>
-            <div className="cover" />
-
-
-            </TopGrid>
-
-         
           }
         </Container>
 

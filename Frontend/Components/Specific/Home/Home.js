@@ -3,6 +3,7 @@ import { Devices } from '../../Global/responsive';
 import { useState,useEffect } from 'react';
 import { useStoreState, useStoreActions } from 'easy-peasy';
 import TopGrid from './ArticleCards/TopGrid';
+import HomeGridArticle from './ArticleCards/HomeGridArticle';
 
 
 const Container = styled.div`
@@ -149,6 +150,55 @@ function useWindowSize() {
   return windowSize;
 }
 
+const HomeGrid = styled.div`
+display: flex;
+max-width: 1100px;
+width: 100%;
+margin: 20px auto;
+
+@media ${Devices.Mobile}
+{
+    flex-flow: column;
+}
+
+@media ${Devices.iPad}
+{
+    padding: 0px 30px;
+}
+
+@media ${Devices.iPadPro}
+{
+    padding: 0px 30px;
+}
+
+.sidebar 
+{
+ max-width: 400px;
+ width: 100%;
+ margin: 0px 7px;
+
+ @media ${Devices.iPad}
+ {
+     max-width: 300px;
+ }
+
+}
+
+.main 
+{
+    max-width: 700px;
+    width: 100%;
+    margin: 0px 7px;
+    @media ${Devices.Mobile}
+    {
+    width: 95%;
+    margin: 0px 10px;
+    }
+
+}
+
+`
+
 
 
 const Home = () => {
@@ -166,11 +216,16 @@ const Home = () => {
     
     return (
         <Container onClick={() => setSidebar(false)}>
-         {
             
             <TopGrid />
-
-          }
+            <HomeGrid>
+                <div className="main">
+                    <HomeGridArticle />
+                </div>
+                <div className="sidebar">
+                sidebar
+                </div>
+            </HomeGrid>
         </Container>
 
     )

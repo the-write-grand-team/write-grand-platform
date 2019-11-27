@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Devices } from '../../../Global/responsive';
 const TopGrid = styled.div`
 display:flex;
-font-family: 'AvenirNext',sans-serif;
+font-family: 'Source Sans Pro',sans-serif;
 max-width: 1100px;
 width: 100%;
 margin: auto;
@@ -29,6 +29,19 @@ padding: 30px;
     height: 100px;
     margin-left: auto;
     }
+
+    @media ${Devices.iPad}
+    {
+        width: 330px;
+        height: 330px;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    @media ${Devices.iPadPro}
+    {
+        margin-left: 0;
+    }
 }
 
 .details 
@@ -52,6 +65,8 @@ padding: 30px;
         text-transform: capitalize;
         width: 95%;
         margin:0px;
+        font-family: 'AvenirNext',sans-serif;
+
         @media ${Devices.Mobile}
         {
         width: 100%;
@@ -84,7 +99,7 @@ padding: 30px;
 .excerpt
 {
     width: 90%;
-    color: #999999;
+    color: #757575;
     font-weight: 600;
     font-size: 15px;
     text-transform: capitalize;

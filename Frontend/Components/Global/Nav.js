@@ -7,7 +7,7 @@ import {useStoreState,useStoreActions} from 'easy-peasy';
 const Logo = styled.img`
 width: 169px;
 max-width: 100%;
-margin-top: 15px;
+margin-top: 12px;
 padding: 0px 10px;
 `
 const Navigation = styled.ul`

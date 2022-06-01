@@ -42,7 +42,7 @@
     "react-id-swiper": "^2.3.2",
     "react-is": "^16.8.6",
     "react-select": "^3.0.4",
-    "sharp": "^0.23.0",
+    "sharp": "^0.30.5",
     "styled-components": "^5.0.0-beta.6-ej4",
     "styled-icons": "^8.3.0",
     "swiper": "^5.1.0"
